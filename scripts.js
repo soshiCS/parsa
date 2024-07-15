@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to set the background image
     function setBackgroundImage() {
-        const baseURL = 'images/backgrounds/';
+        const baseURL = 'images/';
         const date = getCurrentDate();
         const imageURL = `${baseURL}background-${date}.jpg`;
 
