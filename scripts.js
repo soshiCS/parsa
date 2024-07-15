@@ -13,3 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error('Error fetching the Quran verse:', error));
 });
+function redirectToUrl() {
+    window.location.href = 'https://soroush.vercel.app/';
+}
