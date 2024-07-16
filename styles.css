@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s ease-in-out;
+    flex-direction: column; /* Add this to make vertical alignment easier */
 }
 
 .content {
@@ -16,6 +17,10 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-sizing: border-box;
+    flex-grow: 1; /* This makes the content div take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .verse {
@@ -36,7 +41,8 @@ body {
 .logo {
     width: 150px;
     height: auto;
-    margin-top: 20px;
+    margin-top: auto; /* This pushes the logo to the bottom of the content div */
+    margin-bottom: 20px; /* Add some space at the bottom */
 }
 
 /* Responsive adjustments */
