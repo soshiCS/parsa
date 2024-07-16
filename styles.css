@@ -3,6 +3,7 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-size: cover;
@@ -58,6 +59,7 @@ body {
 
     .logo {
         width: 100px;
+        height: auto;
     }
 }
 
