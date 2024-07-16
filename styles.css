@@ -17,10 +17,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .verse {
@@ -40,7 +36,7 @@ body {
 
 .logo-container {
     position: absolute;
-    bottom: 10px; /* Adjust this value to move the logo closer to the bottom */
+    bottom: 10px; /* Logo is positioned at the bottom of the page */
     width: 100%;
     display: flex;
     justify-content: center;
