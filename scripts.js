@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function setBackgroundImage() {
         const baseURL = 'images/';
         const date = getCurrentDate();
-        const imageURL = `${baseURL}background-${date}.jpg`;
+        const imageURL = `${baseURL}background-${date}.png`;
 
         document.body.style.backgroundImage = `url(${imageURL})`;
     }
