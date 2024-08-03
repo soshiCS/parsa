@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
@@ -6,12 +7,21 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const uri = 'mongodb+srv://soshiagh:Haji5731@cluster0.bbins.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = process.env.MONGODB_URI;
 
 app.use(cors());
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Function to get the current date in the format YYYYMMDD
+function getCurrentDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}${month}${day}`;
+}
 
 // Endpoint to fetch ayah data
 app.get('/ayah', async (req, res) => {
@@ -22,10 +32,10 @@ app.get('/ayah', async (req, res) => {
         await client.connect();
         console.log('Connected to MongoDB');
         const database = client.db('parsa');
+        console.log('Database:', database.databaseName);
         const collection = database.collection('ayah');
-        // Hardcode the dateKey for testing
-        const dateKey = '20240803';
-        console.log('Hardcoded Date Key:', dateKey);
+        const dateKey = getCurrentDate();
+        console.log('Generated Date Key:', dateKey);
         const query = { [dateKey]: { $exists: true } };
         console.log('Query:', query);
         const document = await collection.findOne(query);
